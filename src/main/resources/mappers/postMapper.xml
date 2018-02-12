@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.esmond.board.mappers.postMapper">
+ 
+	<select id="selectPost" resultType="BDto">
+		SELECT sid, content, writer, title FROM POST
+	</select>
+
+  	<insert id="writePost" parameterType="BDto">
+		INSERT INTO POST (writer, title, content) VALUES (#{writer}, #{title}, #{content})
+	</insert>
+    
+</mapper>
